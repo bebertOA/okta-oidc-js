@@ -167,7 +167,7 @@ export class OktaAuthService {
      * Returns the referrer path from localStorage or app root.
      */
     getFromUri(): { uri: string, extras: NavigationExtras } {
-      const referrerPath = localStorage.getItem('referrerPath');
+      const referrerPath = localStorage.getItem('referrerPath') || 'false';
       localStorage.removeItem('referrerPath');
 
       const path = JSON.parse(referrerPath) || { uri: '/', params: {} };
